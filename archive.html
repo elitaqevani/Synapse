@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Memory Archive — saved identities and generative artwork for SYNAPSE." />
+    <title>Memory Archive — SYNAPSE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Orbitron:wght@500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+  </head>
+  <body data-page="archive" class="theme-default">
+    <header class="topbar">
+      <div class="brand-wrap">
+        <div class="brand-mark">S</div>
+        <div class="brand-copy">
+          <span class="brand-name">SYNAPSE</span>
+          <span class="brand-tag">ENTER YOUR FUTURE</span>
+        </div>
+      </div>
+
+      <nav class="primary-nav" aria-label="Main navigation">
+        <a href="index.html" class="nav-link" data-nav="home">Portal</a>
+        <a href="identity.html" class="nav-link" data-nav="identity">Future DNA</a>
+        <a href="timeline.html" class="nav-link" data-nav="timeline">Timeline 2045</a>
+        <a href="lab.html" class="nav-link" data-nav="lab">Reality Lab</a>
+        <a href="archive.html" class="nav-link active" data-nav="archive">Memory Archive</a>
+      </nav>
+
+      <div class="utility-cluster">
+        <button id="themePickerToggle" class="icon-button" aria-label="Change accent palette">◌</button>
+        <button id="soundToggle" class="icon-button" aria-label="Toggle sound" aria-pressed="false">Sound Off</button>
+        <button id="mobileNavToggle" class="mobile-nav-toggle" aria-label="Open navigation menu">Menu</button>
+      </div>
+    </header>
+
+    <div id="mobileNav" class="mobile-nav hidden">
+      <nav aria-label="Mobile navigation">
+        <a href="index.html" class="nav-link">Portal</a>
+        <a href="identity.html" class="nav-link">Future DNA</a>
+        <a href="timeline.html" class="nav-link">Timeline 2045</a>
+        <a href="lab.html" class="nav-link">Reality Lab</a>
+        <a href="archive.html" class="nav-link active">Memory Archive</a>
+      </nav>
+    </div>
+
+    <div id="themePalette" class="theme-palette hidden" aria-label="Theme palette selector">
+      <button class="palette-option active" data-theme="default" aria-label="Default cyan theme"><span class="swatch cyan"></span>Default</button>
+      <button class="palette-option" data-theme="violet" aria-label="Violet theme"><span class="swatch violet"></span>Violet</button>
+      <button class="palette-option" data-theme="aurora" aria-label="Aurora theme"><span class="swatch aurora"></span>Aurora</button>
+      <button class="palette-option" data-theme="sunset" aria-label="Sunset theme"><span class="swatch sunset"></span>Sunset</button>
+    </div>
+
+    <div id="commandPanel" class="command-panel hidden" role="dialog" aria-modal="true" aria-labelledby="commandTitle">
+      <div class="command-panel-header">
+        <p id="commandTitle" class="eyebrow">COMMAND PANEL</p>
+        <button class="close-dialog" data-close="commandPanel" aria-label="Close command panel">×</button>
+      </div>
+      <label class="sr-only" for="commandInput">Command search</label>
+      <input id="commandInput" type="text" placeholder="Type a command or page name..." autocomplete="off" />
+      <ul id="commandList" class="command-list" aria-live="polite"></ul>
+    </div>
+
+    <div id="toastContainer" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+    <main class="page-shell archive-shell">
+      <section class="panel intro-panel archive-header">
+        <div>
+          <p class="eyebrow">MEMORY ARCHIVE / LOCAL STORAGE</p>
+          <h1>Saved signals and fragments of possibility.</h1>
+        </div>
+        <div class="archive-actions">
+          <input id="archiveSearch" type="search" placeholder="Search archive..." aria-label="Search archive" />
+          <button id="clearAllButton" class="secondary-button" type="button">Clear all</button>
+        </div>
+      </section>
+
+      <section id="archiveList" class="archive-grid" aria-live="polite"></section>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script src="js/archive.js"></script>
+  </body>
+</html>

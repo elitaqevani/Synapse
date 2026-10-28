@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Timeline 2045 — speculative future scenarios for SYNAPSE." />
+    <title>Timeline 2045 — SYNAPSE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Orbitron:wght@500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+  </head>
+  <body data-page="timeline" class="theme-default">
+    <header class="topbar">
+      <div class="brand-wrap">
+        <div class="brand-mark">S</div>
+        <div class="brand-copy">
+          <span class="brand-name">SYNAPSE</span>
+          <span class="brand-tag">ENTER YOUR FUTURE</span>
+        </div>
+      </div>
+
+      <nav class="primary-nav" aria-label="Main navigation">
+        <a href="index.html" class="nav-link" data-nav="home">Portal</a>
+        <a href="identity.html" class="nav-link" data-nav="identity">Future DNA</a>
+        <a href="timeline.html" class="nav-link active" data-nav="timeline">Timeline 2045</a>
+        <a href="lab.html" class="nav-link" data-nav="lab">Reality Lab</a>
+        <a href="archive.html" class="nav-link" data-nav="archive">Memory Archive</a>
+      </nav>
+
+      <div class="utility-cluster">
+        <button id="themePickerToggle" class="icon-button" aria-label="Change accent palette">◌</button>
+        <button id="soundToggle" class="icon-button" aria-label="Toggle sound" aria-pressed="false">Sound Off</button>
+        <button id="mobileNavToggle" class="mobile-nav-toggle" aria-label="Open navigation menu">Menu</button>
+      </div>
+    </header>
+
+    <div id="mobileNav" class="mobile-nav hidden">
+      <nav aria-label="Mobile navigation">
+        <a href="index.html" class="nav-link">Portal</a>
+        <a href="identity.html" class="nav-link">Future DNA</a>
+        <a href="timeline.html" class="nav-link active">Timeline 2045</a>
+        <a href="lab.html" class="nav-link">Reality Lab</a>
+        <a href="archive.html" class="nav-link">Memory Archive</a>
+      </nav>
+    </div>
+
+    <div id="themePalette" class="theme-palette hidden" aria-label="Theme palette selector">
+      <button class="palette-option active" data-theme="default" aria-label="Default cyan theme"><span class="swatch cyan"></span>Default</button>
+      <button class="palette-option" data-theme="violet" aria-label="Violet theme"><span class="swatch violet"></span>Violet</button>
+      <button class="palette-option" data-theme="aurora" aria-label="Aurora theme"><span class="swatch aurora"></span>Aurora</button>
+      <button class="palette-option" data-theme="sunset" aria-label="Sunset theme"><span class="swatch sunset"></span>Sunset</button>
+    </div>
+
+    <div id="commandPanel" class="command-panel hidden" role="dialog" aria-modal="true" aria-labelledby="commandTitle">
+      <div class="command-panel-header">
+        <p id="commandTitle" class="eyebrow">COMMAND PANEL</p>
+        <button class="close-dialog" data-close="commandPanel" aria-label="Close command panel">×</button>
+      </div>
+      <label class="sr-only" for="commandInput">Command search</label>
+      <input id="commandInput" type="text" placeholder="Type a command or page name..." autocomplete="off" />
+      <ul id="commandList" class="command-list" aria-live="polite"></ul>
+    </div>
+
+    <div id="toastContainer" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+    <main class="page-shell">
+      <section class="panel intro-panel timeline-intro">
+        <div>
+          <p class="eyebrow">TIMELINE 2045 / FICTIONAL POSSIBILITIES</p>
+          <h1>Speculative futures, not forecast facts.</h1>
+        </div>
+        <p class="lede">These events represent imagined trajectories for technology, society, and daily life. They are creative scenarios designed to explore what could emerge from present-day trends.</p>
+      </section>
+
+      <section class="panel timeline-controls-panel">
+        <div class="filter-group" aria-label="Timeline filters">
+          <button class="filter-chip active" data-filter="all" type="button">All</button>
+          <button class="filter-chip" data-filter="AI" type="button">AI</button>
+          <button class="filter-chip" data-filter="Space" type="button">Space</button>
+          <button class="filter-chip" data-filter="Environment" type="button">Environment</button>
+          <button class="filter-chip" data-filter="Digital Life" type="button">Digital Life</button>
+        </div>
+      </section>
+
+      <section class="timeline-layout">
+        <div id="timelineList" class="timeline-panel panel" aria-live="polite"></div>
+
+        <aside class="panel details-panel" aria-live="polite">
+          <p class="eyebrow">SELECTED SCENARIO</p>
+          <div id="eventDetail" class="event-detail empty-state-mini">
+            <p>Select a year to inspect a future scenario.</p>
+          </div>
+        </aside>
+      </section>
+
+      <section class="panel compare-panel">
+        <div class="compare-header">
+          <div>
+            <p class="eyebrow">COMPARE PATHS</p>
+            <h2>Contrast two speculative futures</h2>
+          </div>
+          <button id="compareButton" class="primary-button" type="button">Compare selected</button>
+        </div>
+        <div id="compareContent" class="compare-content empty-state-mini">
+          <p>Select two scenarios from the timeline to compare their social, technical, and cultural differences.</p>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script src="js/timeline.js"></script>
+  </body>
+</html>

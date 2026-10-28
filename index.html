@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="SYNAPSE — Enter Your Future. A futuristic interactive experience exploring identity, possibility, and creativity."
+    />
+    <title>SYNAPSE — Enter Your Future</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Orbitron:wght@500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+  </head>
+  <body data-page="home" class="theme-default">
+    <div id="loadingScreen" class="loading-screen" aria-live="polite">
+      <div class="loading-orb"></div>
+      <div class="loading-copy">
+        <p class="eyebrow">SYSTEM BOOT</p>
+        <h2>Initializing future pathways</h2>
+      </div>
+      <div class="loading-bar" aria-hidden="true">
+        <span class="loading-progress"></span>
+      </div>
+    </div>
+
+    <header class="topbar">
+      <div class="brand-wrap">
+        <div class="brand-mark">S</div>
+        <div class="brand-copy">
+          <span class="brand-name">SYNAPSE</span>
+          <span class="brand-tag">ENTER YOUR FUTURE</span>
+        </div>
+      </div>
+
+      <nav class="primary-nav" aria-label="Main navigation">
+        <a href="index.html" class="nav-link active" data-nav="home">Portal</a>
+        <a href="identity.html" class="nav-link" data-nav="identity">Future DNA</a>
+        <a href="timeline.html" class="nav-link" data-nav="timeline">Timeline 2045</a>
+        <a href="lab.html" class="nav-link" data-nav="lab">Reality Lab</a>
+        <a href="archive.html" class="nav-link" data-nav="archive">Memory Archive</a>
+      </nav>
+
+      <div class="utility-cluster">
+        <button id="themePickerToggle" class="icon-button" aria-label="Change accent palette">◌</button>
+        <button id="soundToggle" class="icon-button" aria-label="Toggle sound" aria-pressed="false">
+          Sound Off
+        </button>
+        <button id="mobileNavToggle" class="mobile-nav-toggle" aria-label="Open navigation menu">
+          Menu
+        </button>
+      </div>
+    </header>
+
+    <div id="mobileNav" class="mobile-nav hidden">
+      <nav aria-label="Mobile navigation">
+        <a href="index.html" class="nav-link active">Portal</a>
+        <a href="identity.html" class="nav-link">Future DNA</a>
+        <a href="timeline.html" class="nav-link">Timeline 2045</a>
+        <a href="lab.html" class="nav-link">Reality Lab</a>
+        <a href="archive.html" class="nav-link">Memory Archive</a>
+      </nav>
+    </div>
+
+    <div id="themePalette" class="theme-palette hidden" aria-label="Theme palette selector">
+      <button class="palette-option active" data-theme="default" aria-label="Default cyan theme">
+        <span class="swatch cyan"></span>Default
+      </button>
+      <button class="palette-option" data-theme="violet" aria-label="Violet theme">
+        <span class="swatch violet"></span>Violet
+      </button>
+      <button class="palette-option" data-theme="aurora" aria-label="Aurora theme">
+        <span class="swatch aurora"></span>Aurora
+      </button>
+      <button class="palette-option" data-theme="sunset" aria-label="Sunset theme">
+        <span class="swatch sunset"></span>Sunset
+      </button>
+    </div>
+
+    <div id="commandPanel" class="command-panel hidden" role="dialog" aria-modal="true" aria-labelledby="commandTitle">
+      <div class="command-panel-header">
+        <p id="commandTitle" class="eyebrow">COMMAND PANEL</p>
+        <button class="close-dialog" data-close="commandPanel" aria-label="Close command panel">×</button>
+      </div>
+      <label class="sr-only" for="commandInput">Command search</label>
+      <input id="commandInput" type="text" placeholder="Type a command or page name..." autocomplete="off" />
+      <ul id="commandList" class="command-list" aria-live="polite"></ul>
+    </div>
+
+    <div id="toastContainer" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+    <main class="page-shell">
+      <section class="hero-panel">
+        <div class="hero-copy">
+          <p class="eyebrow">A future laboratory for possible selves</p>
+          <h1>Synapse is where your next version of reality begins.</h1>
+          <p class="lede">
+            Explore speculative futures, decode your creative identity, and generate new worlds with tools that run entirely in your browser.
+          </p>
+          <div class="cta-row">
+            <a href="identity.html" class="primary-button" id="enterExperienceBtn">ENTER THE UNKNOWN</a>
+            <a href="timeline.html" class="secondary-button">View the future</a>
+          </div>
+          <ul class="hero-metrics" aria-label="Experience highlights">
+            <li><strong>8</strong><span>identity signals</span></li>
+            <li><strong>4</strong><span>future profiles</span></li>
+            <li><strong>∞</strong><span>possible realities</span></li>
+          </ul>
+        </div>
+
+        <div class="portal-stage">
+          <div class="portal-container">
+            <div class="portal-glow"></div>
+            <div class="portal-ring ring-one"></div>
+            <div class="portal-ring ring-two"></div>
+            <div class="portal-core">
+              <canvas id="portalCanvas" aria-label="Animated future portal"></canvas>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="feature-grid" aria-label="Core experience features">
+        <article class="feature-card">
+          <span class="card-index">01</span>
+          <h3>Future DNA</h3>
+          <p>Answer a playful but meaningful set of future-signal questions to discover your creative profile.</p>
+          <a href="identity.html">Begin the scan</a>
+        </article>
+
+        <article class="feature-card">
+          <span class="card-index">02</span>
+          <h3>Timeline 2045</h3>
+          <p>Traverse speculative years shaped by AI, environmental breakthroughs, and new digital rituals.</p>
+          <a href="timeline.html">Explore scenarios</a>
+        </article>
+
+        <article class="feature-card">
+          <span class="card-index">03</span>
+          <h3>Reality Lab</h3>
+          <p>Generate generative compositions with live particle systems and export your favorite outcomes.</p>
+          <a href="lab.html">Open the lab</a>
+        </article>
+
+        <article class="feature-card">
+          <span class="card-index">04</span>
+          <h3>Memory Archive</h3>
+          <p>Keep your saved identities and artwork in a personal archive that lives locally in your browser.</p>
+          <a href="archive.html">Browse memories</a>
+        </article>
+      </section>
+    </main>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
